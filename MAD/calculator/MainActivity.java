@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.atry;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,198 +7,178 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class calculator extends AppCompatActivity {
+
     TextView tv;
-    Button B1,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11,B12,B13,B14,B15,B16;
-    String d1= null,op;;
-    double a,b,c;
+    Button b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,add,sub,mul,div,equal,clear;
+    String op,val=null;
+    Double a,b,c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_calculator);
 
-        B1= findViewById(R.id.B1);
-        B2= findViewById(R.id.B2);
-        B3= findViewById(R.id.B3);
-        B4= findViewById(R.id.B4);
-        B5= findViewById(R.id.B5);
-        B6= findViewById(R.id.B6);
-        B7= findViewById(R.id.B7);
-        B8= findViewById(R.id.B8);
-        B9= findViewById(R.id.B9);
-        B10= findViewById(R.id.B10);
-        B11= findViewById(R.id.B11);
-        B12= findViewById(R.id.B12);
-        B13= findViewById(R.id.B13);
-        B14= findViewById(R.id.B14);
-        B15= findViewById(R.id.B15);
-        B16= findViewById(R.id.B16);
-        tv= findViewById(R.id.tv);
+        b0 = findViewById(R.id.b0);
+        b1 = findViewById(R.id.b1);
+        b2 = findViewById(R.id.b2);
+        b3 = findViewById(R.id.b3);
+        b4 = findViewById(R.id.b4);
+        b5 = findViewById(R.id.b5);
+        b6 = findViewById(R.id.b6);
+        b7 = findViewById(R.id.b7);
+        b8 = findViewById(R.id.b8);
+        b9 = findViewById(R.id.b9);
+        add = findViewById(R.id.add);
+        sub = findViewById(R.id.sub);
+        div = findViewById(R.id.div);
+        mul = findViewById(R.id.mul);
+        clear = findViewById(R.id.clear);
+        equal = findViewById(R.id.equal);
+        tv = findViewById(R.id.tv);
 
-        B1.setOnClickListener(new View.OnClickListener() {
+        b0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString();
-                tv.setText(d1+"1");
+                val = tv.getText().toString();
+                tv.setText(val+"0");
             }
         });
-
-        B2.setOnClickListener(new View.OnClickListener() {
+        b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString();
-                tv.setText(d1+"2");
+                val = tv.getText().toString();
+                tv.setText(val+"1");
             }
         });
-
-        B3.setOnClickListener(new View.OnClickListener() {
+        b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString();
-                tv.setText(d1+"3");
+                val = tv.getText().toString();
+                tv.setText(val+"2");
             }
         });
-
-        B4.setOnClickListener(new View.OnClickListener() {
+        b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString();
-                tv.setText(d1+"4");
+                val = tv.getText().toString();
+                tv.setText(val+"3");
             }
         });
-
-        B5.setOnClickListener(new View.OnClickListener() {
+        b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString();
-                tv.setText(d1+"5");
+                val = tv.getText().toString();
+                tv.setText(val+"4");
             }
         });
-
-        B6.setOnClickListener(new View.OnClickListener() {
+        b5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString();
-                tv.setText(d1+"6");
+                val = tv.getText().toString();
+                tv.setText(val+"5");
             }
         });
-
-        B7.setOnClickListener(new View.OnClickListener() {
+        b6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString();
-                tv.setText(d1+"7");
+                val = tv.getText().toString();
+                tv.setText(val+"6");
             }
         });
-
-        B8.setOnClickListener(new View.OnClickListener() {
+        b7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString();
-                tv.setText(d1+"8");
-
+                val = tv.getText().toString();
+                tv.setText(val+"7");
             }
         });
-
-        B9.setOnClickListener(new View.OnClickListener() {
+        b8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString();
-                tv.setText(d1+"9");
+                val = tv.getText().toString();
+                tv.setText(val+"8");
             }
         });
-
-        B10.setOnClickListener(new View.OnClickListener() {
+        b9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString();
-                tv.setText(d1+"0");
+                val = tv.getText().toString();
+                tv.setText(val+"9");
             }
         });
-
-        B11.setOnClickListener(new View.OnClickListener() {
+        add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString();
-                a=Double.parseDouble(d1);
-                d1=null;
+                val = tv.getText().toString();
+                a = Double.parseDouble(val);
+                val = null;
                 tv.setText(null);
-                op="+";
+                op = "+";
             }
         });
-
-        B12.setOnClickListener(new View.OnClickListener() {
+        mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString() ;
-                a=Double.parseDouble(d1);
-                d1=null;
+                val = tv.getText().toString();
+                a = Double.parseDouble(val);
+                val = null;
                 tv.setText(null);
-                op="-";
+                op = "*";
             }
         });
-
-        B13.setOnClickListener(new View.OnClickListener() {
+        div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString();
-                a=Double.parseDouble(d1);
-                d1=null;
+                val = tv.getText().toString();
+                a = Double.parseDouble(val);
+                val = null;
                 tv.setText(null);
-                op="*";
+                op = "/";
             }
         });
-
-        B14.setOnClickListener(new View.OnClickListener() {
+        sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString();
-                a=Double.parseDouble(d1);
-                d1=null;
+                val = tv.getText().toString();
+                a = Double.parseDouble(val);
+                val = null;
                 tv.setText(null);
-                op="/";
+                op = "-";
             }
         });
-
-
-
-        B16.setOnClickListener(new View.OnClickListener() {
+        clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=null;
+                val = null;
                 tv.setText(null);
-
             }
         });
-
-        B15.setOnClickListener(new View.OnClickListener() {
+        equal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d1=tv.getText().toString();
-                b=Double.parseDouble(d1);
-                switch (op){
+                val = tv.getText().toString();
+                b = Double.parseDouble(val);
+                switch(op){
                     case "+":
-                        c=a+b;
+                        c = a+b;
                         break;
                     case "-":
-                        c=a-b;
+                        c = a-b;
                         break;
                     case "*":
-                        c=a*b;
+                        c = a*b;
                         break;
                     case "/":
-                        c=a/b;
+                        c = a/b;
+                        break;
+                    default:
                         break;
                 }
                 tv.setText(String.valueOf(c));
-
             }
         });
 
-
-
-
-
     }
+
 }
